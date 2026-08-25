@@ -2,29 +2,29 @@ from abc import ABC, abstractmethod
 
 
 
-class ElementoHTML(ABC):
+class ElementoHTM_Base(ABC):
     @abstractmethod
     def renderizar(self):
         pass
 
 
-class Paragrafo(ElementoHTML):
+class Paragrafo(ElementoHTM_Base):
     pass
 
 
-class Tabela(ElementoHTML):
+class Tabela(ElementoHTM_Base):
     pass
 
 
-class Imagem(ElementoHTML):
+class Imagem(ElementoHTM_Base):
     pass
 
 
-class Link(ElementoHTML):
+class Link(ElementoHTM_Base):
     pass
 
 
-class Formulario(ElementoHTML):
+class Formulario(ElementoHTM_Base):
     pass
 
 
@@ -79,7 +79,7 @@ class FormularioHTML5(Formulario):
 
 
 
-class FabricaHTML(ABC):
+class FabricaHTML_Base(ABC):
     @abstractmethod
     def criar_paragrafo(self):
         pass
@@ -102,7 +102,7 @@ class FabricaHTML(ABC):
 
 
 
-class FabricaHTML5(FabricaHTML):
+class FabricaHTML5(FabricaHTML_Base):
     def criar_paragrafo(self):
         return ParagrafoHTML5("Este é um parágrafo HTML.")
 

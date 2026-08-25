@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class Veiculo(ABC):
+class Veiculo_base(ABC):
 
     @abstractmethod
     def iniciar_transporte(self):
@@ -17,7 +17,7 @@ class Veiculo(ABC):
 
 
 
-class VeiculoRodoviario(Veiculo):
+class Veiculo_Da_Rodovia(Veiculo_base):
     
     def iniciar_transporte(self):
         print("Transporte rodoviário iniciado.")
@@ -29,7 +29,7 @@ class VeiculoRodoviario(Veiculo):
         print("Transporte rodoviário encerrado.")
 
 
-class VeiculoFerroviario(Veiculo):
+class Veiculo_Da_Ferrovia(Veiculo_base):
 
     def iniciar_transporte(self):
         print("Transporte ferroviário iniciado.")
@@ -41,7 +41,7 @@ class VeiculoFerroviario(Veiculo):
         print("Transporte ferroviário encerrado.")
 
 
-class VeiculoMaritimo(Veiculo):
+class Veiculo_Da_Maritima(Veiculo_base):
 
     def iniciar_transporte(self):
         print("Transporte marítimo iniciado.")
@@ -53,7 +53,7 @@ class VeiculoMaritimo(Veiculo):
         print("Transporte marítimo encerrado.")
 
 
-class VeiculoAereo(Veiculo):
+class Veiculo_Da_Aerea(Veiculo_base):
 
     def iniciar_transporte(self):
         print("Transporte aéreo iniciado.")
@@ -66,7 +66,7 @@ class VeiculoAereo(Veiculo):
 
 
 
-class Logistica(ABC):
+class Logistica_base(ABC):
     
     @abstractmethod
     def criar_veiculo(self):
@@ -83,49 +83,49 @@ class Logistica(ABC):
         
         
 
-class LogisticaRodoviaria(Logistica):
+class Logistica_Da_Rodoviaria(Logistica_base):
     
     def criar_veiculo(self):
-        return VeiculoRodoviario()
+        return Veiculo_Da_Rodovia()
 
 
-class LogisticaFerroviaria(Logistica):
-
-    def criar_veiculo(self):
-        return VeiculoFerroviario()
-
-
-class LogisticaMaritima(Logistica):
+class Logistica_Da_Ferroviaria(Logistica_base):
 
     def criar_veiculo(self):
-        return VeiculoMaritimo()
+        return Veiculo_Da_Ferrovia()
 
 
-class LogisticaAerea(Logistica):
+class Logistica_Da_Maritima(Logistica_base):
 
     def criar_veiculo(self):
-        return VeiculoAereo()
+        return Veiculo_Da_Maritima()
+
+
+class Logistica_Da_Aerea(Logistica_base):
+
+    def criar_veiculo(self):
+        return Veiculo_Da_Aerea()
 
 
 
 def main():
     
-    rodoviaria = LogisticaRodoviaria()
+    rodoviaria = Logistica_Da_Rodoviaria()
     rodoviaria.realizar_transporte()
 
     print()
 
-    ferroviaria = LogisticaFerroviaria()
+    ferroviaria = Logistica_Da_Ferroviaria()
     ferroviaria.realizar_transporte()
 
     print()
 
-    maritima = LogisticaMaritima()
+    maritima = Logistica_Da_Maritima()
     maritima.realizar_transporte()
 
     print()
 
-    aerea = LogisticaAerea()
+    aerea = Logistica_Da_Aerea()
     aerea.realizar_transporte()
 
 
