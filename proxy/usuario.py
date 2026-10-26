@@ -65,9 +65,9 @@ class Main:
 
   @staticmethod
   def main():
-    print("=" * 60)
+      
     print(" SISTEMA DE GERENCIAMENTO DE USUÁRIOS - CONFORMIDADE LGPD ")
-    print("=" * 60)
+      
 
     usuario_real = Usuario(
         nome="Ana Beatriz Souza",
@@ -96,7 +96,7 @@ class Main:
     except PermissionError as e:
       print(f"[BLOQUEIO DE SEGURANÇA] -> {e}")
 
-    print("=" * 60)
+      
 
 
 if __name__ == "__main__":

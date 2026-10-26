@@ -104,11 +104,11 @@ class Principal:
         f" Bloqueio: {transacao.conta.bloqueada_judicialmente}"
     )
     print(f"Valor da Transação -> R$ {transacao.valor:.2f}")
-    print("-" * 70)
+    
 
     autorizada = validador_inicial.validar(transacao)
 
-    print("-" * 70)
+    
     if autorizada:
       print(" RESULTADO: Transação AUTORIZADA com sucesso!")
     else:
